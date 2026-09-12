@@ -24,10 +24,29 @@ function doPost(e) {
   }
 }
 
+function calculateAge(dobStr) {
+  if (!dobStr) return '';
+  var dob = new Date(dobStr + 'T00:00:00');
+  if (isNaN(dob.getTime())) return '';
+  var now = new Date();
+  var years = now.getFullYear() - dob.getFullYear();
+  var months = now.getMonth() - dob.getMonth();
+  if (now.getDate() < dob.getDate()) months -= 1;
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  var parts = [];
+  if (years > 0) parts.push(years + (years === 1 ? ' year' : ' years'));
+  if (months > 0 || years === 0) parts.push(months + (months === 1 ? ' month' : ' months'));
+  return parts.join(' ');
+}
+
 function handleApplication(data, ss) {
   var sheet = ss.getSheetByName('Applications') || ss.getSheets()[0];
   var children = (data.children || []).map(function (c) {
-    return c.name + ' (DOB: ' + c.dob + (c.allergies ? ', allergies: ' + c.allergies : '') + ')';
+    var age = calculateAge(c.dob);
+    return c.name + ' (DOB: ' + c.dob + (age ? ', Age: ' + age : '') + (c.allergies ? ', allergies: ' + c.allergies : '') + ')';
   });
   sheet.appendRow([
     new Date(), data.parentName, data.email, data.phone,

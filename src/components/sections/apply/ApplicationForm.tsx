@@ -138,6 +138,17 @@ export function ApplicationForm() {
         <p className="mt-4 font-display text-xl text-ink">
           Thank you! We&apos;ll reach out about availability and booking times.
         </p>
+        <button
+          type="button"
+          onClick={() => {
+            setFormData(emptyForm());
+            setErrors({ children: [{}] });
+            setStatus("idle");
+          }}
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-sky px-5 py-2 text-sm font-bold text-white shadow-soft hover:scale-105"
+        >
+          <RotateCcw className="h-4 w-4" aria-hidden="true" /> Submit another response
+        </button>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import { FormField, inputClass, inputErrorClass } from "@/components/ui/FormField";
+import { calculateAge } from "@/lib/utils";
 
 export interface ChildFormData {
   name: string;
@@ -20,6 +21,7 @@ interface ChildFieldsProps {
 
 export function ChildFields({ index, value, errors, onChange }: ChildFieldsProps) {
   const prefix = `child-${index}`;
+  const age = calculateAge(value.dob);
 
   return (
     <div className="rounded-2xl border-2 border-dashed border-grass/50 bg-white/60 p-4">
@@ -38,7 +40,13 @@ export function ChildFields({ index, value, errors, onChange }: ChildFieldsProps
           />
         </FormField>
 
-        <FormField label="Date of birth" htmlFor={`${prefix}-dob`} required error={errors?.dob}>
+        <FormField
+          label="Date of birth"
+          htmlFor={`${prefix}-dob`}
+          required
+          error={errors?.dob}
+          hint={age ? `Age: ${age.label}` : undefined}
+        >
           <input
             id={`${prefix}-dob`}
             type="date"
@@ -46,7 +54,7 @@ export function ChildFields({ index, value, errors, onChange }: ChildFieldsProps
             onChange={(e) => onChange("dob", e.target.value)}
             className={errors?.dob ? inputErrorClass : inputClass}
             aria-invalid={Boolean(errors?.dob)}
-            aria-describedby={errors?.dob ? `${prefix}-dob-error` : undefined}
+            aria-describedby={errors?.dob ? `${prefix}-dob-error` : age ? `${prefix}-dob-hint` : undefined}
           />
         </FormField>
 

@@ -80,6 +80,17 @@ export function ContactForm() {
       <div className="rounded-3xl bg-white p-8 text-center shadow-playful">
         <CheckCircle2 className="mx-auto h-12 w-12 text-grass-dark" aria-hidden="true" />
         <p className="mt-4 font-display text-xl text-ink">Thanks for reaching out! We&apos;ll get back to you soon.</p>
+        <button
+          type="button"
+          onClick={() => {
+            setFormData({ name: "", email: "", message: "" });
+            setErrors({});
+            setStatus("idle");
+          }}
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-sky px-5 py-2 text-sm font-bold text-white shadow-soft hover:scale-105"
+        >
+          <RotateCcw className="h-4 w-4" aria-hidden="true" /> Submit another response
+        </button>
       </div>
     );
   }

@@ -30,7 +30,9 @@ export function FormField({ label, htmlFor, required, error, hint, children, cla
           {error}
         </p>
       ) : hint ? (
-        <p className="mt-1 text-xs text-ink-soft">{hint}</p>
+        <p id={`${htmlFor}-hint`} className="mt-1 text-xs text-ink-soft" aria-live="polite">
+          {hint}
+        </p>
       ) : null}
     </div>
   );
