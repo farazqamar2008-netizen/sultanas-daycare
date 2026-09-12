@@ -30,7 +30,7 @@ function validate(data: ContactFormData): FormErrors {
 
 function buildMailto(data: ContactFormData) {
   const subject = encodeURIComponent(`Message from ${data.name || "the website"}`);
-  const body = encodeURIComponent(`${data.message}\n\n— ${data.name} (${data.email})`);
+  const body = encodeURIComponent(`${data.message}\n\nFrom: ${data.name} (${data.email})`);
   return `mailto:${BUSINESS.email}?subject=${subject}&body=${body}`;
 }
 

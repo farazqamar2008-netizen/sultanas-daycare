@@ -1,6 +1,6 @@
 import { AnimatedSection } from "@/components/design/AnimatedSection";
-import { PhotoCutout } from "@/components/design/PhotoCutout";
 import { CloudDoodle, StarDoodle, CrayonSquiggle } from "@/components/design/Doodles";
+import { HeroSlider } from "./HeroSlider";
 
 export function Hero() {
   return (
@@ -34,24 +34,8 @@ export function Hero() {
           </a>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.15} className="relative mx-auto h-72 w-full max-w-sm sm:h-80">
-          <PhotoCutout
-            src="/gallery/group/group-pictures-from-sultanas-daycare-1.jpg"
-            alt="Group photo of children at Sultana's Daycare"
-            shape="blob"
-            tilt={-2}
-            className="absolute left-0 top-0 w-52 sm:w-64"
-            priority
-          />
-          <PhotoCutout
-            src="/gallery/graduation/graduation-sultanas-daycare-1.jpg"
-            alt="Graduation day at Sultana's Daycare"
-            shape="rect"
-            frame="polaroid"
-            caption="Spots open — Apply now! 🎓"
-            tilt={6}
-            className="absolute bottom-0 right-0 w-36 sm:w-44"
-          />
+        <AnimatedSection delay={0.15}>
+          <HeroSlider />
         </AnimatedSection>
       </div>
     </section>

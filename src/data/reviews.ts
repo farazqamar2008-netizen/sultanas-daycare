@@ -1,21 +1,3 @@
-/**
- * Seeded from the 5 named Google reviews in the Shapo floating badge config
- * (see the script tag in src/app/layout.tsx) — no review text was provided
- * for these, only names + a 5-star rating, so none is fabricated here.
- */
-export interface SeedReview {
-  name: string;
-  rating: number;
-}
-
-export const seedReviews: SeedReview[] = [
-  { name: "Bibi Zainab", rating: 5 },
-  { name: "a_q.t1p", rating: 5 },
-  { name: "Vidya", rating: 5 },
-  { name: "Heather Massey", rating: 5 },
-  { name: "Latoya Cohen", rating: 5 },
-];
-
 export const REVIEW_SUMMARY = {
   rating: 4.7,
   count: 14,

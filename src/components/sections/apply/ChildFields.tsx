@@ -61,7 +61,7 @@ export function ChildFields({ index, value, errors, onChange }: ChildFieldsProps
         <FormField
           label="Pet / food allergies"
           htmlFor={`${prefix}-allergies`}
-          hint="Optional — let us know if there's anything we should be aware of."
+          hint="Optional. Let us know if there's anything we should be aware of."
           className="sm:col-span-2"
         >
           <input

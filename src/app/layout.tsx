@@ -22,7 +22,7 @@ const nunito = Nunito({
 
 const TITLE = "Sultana's Daycare & Babysitting | Home Daycare in Bradford West Gwillimbury";
 const DESCRIPTION =
-  "Sultana's Daycare & Babysitting is a warm, home-based daycare in Bradford West Gwillimbury, Ontario, rated 4.7 stars. Now enrolling — apply online today.";
+  "Sultana's Daycare & Babysitting is a warm, home-based daycare in Bradford West Gwillimbury, Ontario, rated 4.7 stars. Now enrolling: apply online today.";
 const REPRESENTATIVE_IMAGE = "/gallery/group/group-pictures-from-sultanas-daycare-1.jpg";
 
 // TODO: once a production domain is live, set `metadataBase: new URL("https://...")`

@@ -40,7 +40,7 @@ export default function WebsitePolicyPage() {
       <h2>Accuracy</h2>
       <p>
         We try to keep hours, services, and pricing information current, but details on
-        this site are for general information and may change — please confirm anything
+        this site are for general information and may change. Please confirm anything
         important directly with us.
       </p>
 

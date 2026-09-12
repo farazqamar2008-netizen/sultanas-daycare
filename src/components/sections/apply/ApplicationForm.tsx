@@ -263,7 +263,7 @@ export function ApplicationForm() {
       <FormField
         label="Required schedule"
         htmlFor="schedule"
-        hint="Optional — e.g. Mon/Wed/Fri, full-time, mornings only."
+        hint="Optional, e.g. Mon/Wed/Fri, full-time, mornings only."
       >
         <textarea
           id="schedule"

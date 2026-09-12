@@ -17,6 +17,9 @@ interface LightboxProps {
   onNavigate: (index: number) => void;
 }
 
+/** Full-screen photo viewer. Shows only the enlarged image (plus close/
+ * prev/next controls) — no caption or label, since alt text here is for
+ * accessibility only, not something visitors should read on screen. */
 export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const isOpen = index !== null;
@@ -101,26 +104,23 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="relative flex max-h-[80vh] w-full max-w-2xl flex-col items-center"
+            className="relative aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-xl bg-white shadow-playful"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white shadow-playful">
-              {photo.src ? (
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(min-width: 768px) 640px, 90vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-sky-light via-cream-soft to-sun-light text-ink-soft">
-                  <ImageIcon className="h-10 w-10 opacity-60" aria-hidden="true" />
-                  <span className="text-sm font-medium opacity-70">Photo coming soon</span>
-                </div>
-              )}
-            </div>
-            <p className="mt-3 text-center text-sm font-medium text-cream">{photo.alt}</p>
+            {photo.src ? (
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(min-width: 768px) 640px, 90vw"
+                className="object-cover"
+              />
+            ) : (
+              <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-sky-light via-cream-soft to-sun-light text-ink-soft">
+                <ImageIcon className="h-10 w-10 opacity-60" aria-hidden="true" />
+                <span className="text-sm font-medium opacity-70">Photo coming soon</span>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

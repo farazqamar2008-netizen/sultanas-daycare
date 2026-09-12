@@ -29,11 +29,10 @@ export function Footer() {
           <Link href="/policies/application-policy" className="underline hover:text-white">
             Application Policy
           </Link>
-          <span className="text-xs text-cream/60">(drafts, pending review)</span>
         </div>
 
         <p className="text-sm text-cream/60">
-          Thank you for considering Sultana&apos;s Daycare &amp; Babysitting — we can&apos;t wait to meet your family. 💛
+          Thank you for considering Sultana&apos;s Daycare &amp; Babysitting. We can&apos;t wait to meet your family. 💛
         </p>
         <p className="text-xs text-cream/50">
           &copy; {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.

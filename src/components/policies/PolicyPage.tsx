@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { AnimatedSection } from "@/components/design/AnimatedSection";
-import { DraftBanner } from "./DraftBanner";
 
 export function PolicyPage({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -17,8 +16,7 @@ export function PolicyPage({ title, children }: { title: string; children: React
 
         <AnimatedSection>
           <h1 className="mt-6 font-display text-3xl text-ink sm:text-4xl">{title}</h1>
-          <DraftBanner />
-          <div className="space-y-5 text-ink-soft [&_h2]:mt-6 [&_h2]:font-display [&_h2]:text-lg [&_h2]:text-ink [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
+          <div className="mt-6 space-y-5 text-ink-soft [&_h2]:mt-6 [&_h2]:font-display [&_h2]:text-lg [&_h2]:text-ink [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
             {children}
           </div>
         </AnimatedSection>

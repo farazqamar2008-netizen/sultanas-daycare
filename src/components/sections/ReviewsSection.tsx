@@ -1,6 +1,7 @@
+import Script from "next/script";
 import { Star } from "lucide-react";
 import { AnimatedSection } from "@/components/design/AnimatedSection";
-import { seedReviews, REVIEW_SUMMARY } from "@/data/reviews";
+import { REVIEW_SUMMARY } from "@/data/reviews";
 import { cn } from "@/lib/utils";
 
 function Stars({ rating }: { rating: number }) {
@@ -29,19 +30,10 @@ export function ReviewsSection() {
         </div>
       </AnimatedSection>
 
-      {/*
-        Owner: paste Shapo's inline "Reviews Wall/Carousel" embed code
-        inside this container (replacing the seeded cards below) once
-        you have it — id kept stable so it's easy to find.
-      */}
-      <div id="shapo-reviews-embed" className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {seedReviews.map((review, i) => (
-          <AnimatedSection key={review.name} delay={i * 0.06} className="rounded-2xl bg-white p-5 shadow-soft">
-            <Stars rating={review.rating} />
-            <p className="mt-3 font-display text-ink">{review.name}</p>
-          </AnimatedSection>
-        ))}
-      </div>
+      <AnimatedSection delay={0.1} className="mx-auto mt-10 max-w-4xl">
+        <div id="shapo-widget-d0a689568538c832a527" />
+        <Script id="shapo-embed-js" src="https://cdn.shapo.io/js/embed.js" strategy="afterInteractive" />
+      </AnimatedSection>
     </section>
   );
 }
