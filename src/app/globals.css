@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for Sultana's Daycare.
+  These are temporary "playful placeholder" brand colors until a real
+  logo/palette is supplied by the owner — see PhotoCutout and the
+  design system components for where they're used.
+*/
+:root {
+  --color-cream: #fffaf0;
+  --color-cream-soft: #fff3e0;
+  --color-ink: #3a2e2a;
+  --color-ink-soft: #6b5b52;
+
+  --color-sky: #6fd0e6;
+  --color-sky-light: #d7f4fa;
+  --color-sky-dark: #2fa8c4;
+
+  --color-grass: #8bc34a;
+  --color-grass-light: #e3f3d2;
+  --color-grass-dark: #689f38;
+
+  --color-sun: #ffc94d;
+  --color-sun-light: #fff1cf;
+  --color-sun-dark: #f2a70a;
+
+  --color-coral: #ff8fa3;
+  --color-coral-light: #ffe1e7;
+  --color-coral-dark: #f2617c;
+
+  --color-lavender: #b7a6e8;
+  --color-lavender-light: #ece5fb;
+
+  --shadow-color: 30 20 10;
+}
+
+@theme inline {
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+
+  --color-sky: var(--color-sky);
+  --color-sky-light: var(--color-sky-light);
+  --color-sky-dark: var(--color-sky-dark);
+
+  --color-grass: var(--color-grass);
+  --color-grass-light: var(--color-grass-light);
+  --color-grass-dark: var(--color-grass-dark);
+
+  --color-sun: var(--color-sun);
+  --color-sun-light: var(--color-sun-light);
+  --color-sun-dark: var(--color-sun-dark);
+
+  --color-coral: var(--color-coral);
+  --color-coral-light: var(--color-coral-light);
+  --color-coral-dark: var(--color-coral-dark);
+
+  --color-lavender: var(--color-lavender);
+  --color-lavender-light: var(--color-lavender-light);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+
+  --radius-blob: 42% 58% 63% 37% / 41% 44% 56% 59%;
+
+  --shadow-soft: 0 6px 16px -4px rgb(var(--shadow-color) / 0.18);
+  --shadow-playful: 0 10px 30px -8px rgb(var(--shadow-color) / 0.28);
+  --shadow-sticker: 0 4px 0 0 rgb(var(--shadow-color) / 0.12), 0 8px 20px -6px rgb(var(--shadow-color) / 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* This is a warm, kid-friendly marketing site — it intentionally
+     stays on the light storybook palette rather than offering a dark
+     mode, so no overrides are defined here. */
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+@layer utilities {
+  .rounded-blob {
+    border-radius: var(--radius-blob);
+  }
+}
