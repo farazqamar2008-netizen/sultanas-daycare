@@ -19,10 +19,18 @@ Copy `.env.example` to `.env.local` and fill in values as they're provided:
 
 - `NEXT_PUBLIC_FORM_ENDPOINT` — the Google Apps Script Web App URL the
   application/contact forms POST to. Left blank until the owner deploys the
-  Phase 5 backend; forms fail gracefully while it's unset.
+  backend in `google-apps-script/` (see that folder's README); forms fail
+  gracefully while it's unset.
 
 In Vercel, set the same variable under Project Settings → Environment
 Variables.
+
+## Content
+
+- `src/data/updates.ts` — the news feed. Add an entry (optionally with a
+  photo dropped into `public/updates/`) to post an update.
+- `src/data/gallery.ts` — the photo gallery's slide decks, organized by
+  category under `public/gallery/<category>/`.
 
 ## Design system
 
