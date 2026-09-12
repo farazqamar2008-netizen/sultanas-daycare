@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fredoka, Nunito } from "next/font/google";
 import { ShapeDefs } from "@/components/design/ShapeDefs";
+import { SHAPO_BADGE_DATA_SETTINGS } from "@/data/reviews";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -30,6 +32,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col font-sans">
         <ShapeDefs />
         {children}
+        <Script
+          src="https://cdn.shapo.io/js/google-badge-loader.js"
+          data-settings={SHAPO_BADGE_DATA_SETTINGS}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
