@@ -4,10 +4,7 @@ import { CloudDoodle, StarDoodle, CrayonSquiggle } from "@/components/design/Doo
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden bg-sky-light px-4 pb-20 pt-14 sm:px-6 sm:pt-20"
-    >
+    <section className="relative overflow-hidden bg-sky-light px-4 pb-20 pt-14 sm:px-6 sm:pt-20">
       <CloudDoodle className="absolute left-4 top-10 w-16 opacity-80 sm:left-10 sm:w-24" />
       <CloudDoodle className="absolute right-6 top-28 w-12 opacity-60 sm:right-16 sm:w-20" />
       <StarDoodle className="absolute right-10 top-8 w-7 sm:right-24 sm:w-9" />

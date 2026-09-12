@@ -93,6 +93,16 @@ body {
   color: var(--color-foreground);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-coral-dark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 @layer utilities {
   .rounded-blob {
     border-radius: var(--radius-blob);

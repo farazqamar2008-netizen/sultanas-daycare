@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NAV_LINKS } from "@/data/nav";
@@ -12,32 +13,32 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="text-lg sm:text-xl"
           onClick={() => setOpen(false)}
         >
           <Wordmark />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-semibold text-ink-soft transition-colors hover:text-coral-dark"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href="#apply"
+        <Link
+          href="/#apply"
           className="hidden rounded-full bg-coral px-5 py-2 text-sm font-bold text-white shadow-soft transition-transform hover:scale-105 md:inline-block"
         >
           Apply Now
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -62,14 +63,14 @@ export function Header() {
           >
             <div className="flex flex-col gap-1 px-4 py-3 sm:px-6">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-2 py-2 text-base font-semibold text-ink-soft hover:bg-sky-light hover:text-coral-dark"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.nav>
