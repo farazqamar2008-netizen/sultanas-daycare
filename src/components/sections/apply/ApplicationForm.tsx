@@ -123,6 +123,8 @@ export function ApplicationForm() {
         }),
       });
       if (!res.ok) throw new Error("Request failed");
+      const json = await res.json().catch(() => null);
+      if (json && json.result !== "success") throw new Error(json.error || "Unknown error");
       setStatus("success");
     } catch {
       setStatus("error");
