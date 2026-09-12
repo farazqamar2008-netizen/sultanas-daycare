@@ -29,11 +29,13 @@ export const updates: Update[] = [
     date: "2026-09-05",
     title: "Now enrolling for Fall!",
     blurb: "We have a few spots opening up this fall — reach out if you'd like to come for a visit.",
+    image: "/gallery/group/sultanas-daycare-group-picture.jpg",
   },
   {
     date: "2026-07-15",
     title: "Story time favourites 📚",
     blurb: "New picture books arrived and circle time has never been more popular.",
+    image: "/gallery/everyday/4-kids-reading.jpg",
   },
   {
     date: "2026-08-20",

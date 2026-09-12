@@ -1,7 +1,8 @@
 import { AnimatedSection } from "@/components/design/AnimatedSection";
 import { sortedUpdates } from "@/data/updates";
+import { galleryCategories } from "@/data/gallery";
 import { UpdateCard } from "./updates/UpdateCard";
-import { PhotoGallery } from "./updates/PhotoGallery";
+import { SlideDeck } from "./updates/SlideDeck";
 
 export function UpdatesSection() {
   const updates = sortedUpdates();
@@ -21,13 +22,11 @@ export function UpdatesSection() {
         ))}
       </div>
 
-      <AnimatedSection className="mx-auto mt-16 max-w-5xl text-center">
-        <h3 className="font-display text-2xl text-ink">Photo Gallery</h3>
-        <p className="mt-1 text-sm text-ink-soft">Click any photo to see it up close.</p>
-        <div className="mt-8">
-          <PhotoGallery updates={updates} />
-        </div>
-      </AnimatedSection>
+      <div className="mx-auto mt-16 max-w-5xl space-y-14">
+        {galleryCategories.map((category) => (
+          <SlideDeck key={category.slug} title={category.title} photos={category.photos} />
+        ))}
+      </div>
     </section>
   );
 }
