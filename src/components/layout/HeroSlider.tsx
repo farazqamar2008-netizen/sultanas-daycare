@@ -33,7 +33,7 @@ export function HeroSlider() {
 
   return (
     <div
-      className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl shadow-playful"
+      className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl bg-gradient-to-br from-sky-light to-sun-light shadow-playful"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -55,7 +55,7 @@ export function HeroSlider() {
             fill
             priority={index === 0}
             sizes="(min-width: 640px) 384px, 90vw"
-            className="object-cover"
+            className="object-contain"
           />
         </motion.button>
       </AnimatePresence>

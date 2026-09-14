@@ -11,6 +11,8 @@ const SERVICES: Service[] = [
     description: "Monday – Friday, 7:30 AM – 5:00 PM.",
     accent: "sky",
     image: "/gallery/everyday/2-kids-waiting-to-go-home-in-jackets.jpg",
+    imageWidth: 1200,
+    imageHeight: 1600,
   },
   {
     icon: <UtensilsCrossed className={ICON_CLASS} aria-hidden="true" />,
@@ -18,6 +20,8 @@ const SERVICES: Service[] = [
     description: "One morning snack, one lunch, and one afternoon snack every day.",
     accent: "sun",
     image: "/gallery/everyday/funny-eating-photo-single-kid.jpg",
+    imageWidth: 934,
+    imageHeight: 1600,
   },
   {
     icon: <Moon className={ICON_CLASS} aria-hidden="true" />,
@@ -25,6 +29,8 @@ const SERVICES: Service[] = [
     description: "2 hours of nap time in a dedicated sleeping room.",
     accent: "lavender",
     image: "/gallery/everyday/1-infant-sleeping-in-cradle.jpg",
+    imageWidth: 1200,
+    imageHeight: 1600,
   },
   {
     icon: <TreePine className={ICON_CLASS} aria-hidden="true" />,
@@ -32,6 +38,8 @@ const SERVICES: Service[] = [
     description: "2 hours of outdoor play daily, rain or shine.",
     accent: "grass",
     image: "/gallery/outdoor/outdoor-sultana-daycare-1.jpg",
+    imageWidth: 1200,
+    imageHeight: 1600,
   },
   {
     icon: <BookOpen className={ICON_CLASS} aria-hidden="true" />,
@@ -39,6 +47,8 @@ const SERVICES: Service[] = [
     description: "Circle time, story time, dance time, drama play, art & colouring, and alphabets & counting.",
     accent: "coral",
     image: "/gallery/everyday/kids-making-alphabet-train.jpg",
+    imageWidth: 1200,
+    imageHeight: 1600,
   },
   {
     icon: <HeartHandshake className={ICON_CLASS} aria-hidden="true" />,
@@ -46,6 +56,8 @@ const SERVICES: Service[] = [
     description: "Washroom time and diaper changes as needed, always supervised.",
     accent: "sky",
     image: "/gallery/group/group-pictures-from-sultanas-daycare-2.jpg",
+    imageWidth: 1200,
+    imageHeight: 1600,
   },
   {
     icon: <Sparkles className={ICON_CLASS} aria-hidden="true" />,
@@ -53,6 +65,8 @@ const SERVICES: Service[] = [
     description: "Weekend care and emergency care available for current and previous families.",
     accent: "sun",
     image: "/gallery/everyday/birthday-girl-cutting-cake.jpg",
+    imageWidth: 1200,
+    imageHeight: 1600,
   },
 ];
 

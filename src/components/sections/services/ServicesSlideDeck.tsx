@@ -24,6 +24,10 @@ export interface Service {
   description: string;
   accent: ServiceAccent;
   image: string;
+  /** Real pixel dimensions of `image`, so its box matches its actual
+   * aspect ratio instead of cropping it to a fixed shape. */
+  imageWidth: number;
+  imageHeight: number;
 }
 
 export function ServicesSlideDeck({ services }: { services: Service[] }) {
@@ -72,7 +76,8 @@ export function ServicesSlideDeck({ services }: { services: Service[] }) {
                 type="button"
                 onClick={() => setLightboxIndex(i)}
                 aria-label={`View photo enlarged: ${service.title}`}
-                className="relative block aspect-[4/3] w-full cursor-zoom-in"
+                className="relative block w-full cursor-zoom-in"
+                style={{ aspectRatio: `${service.imageWidth} / ${service.imageHeight}` }}
               >
                 <Image
                   src={service.image}

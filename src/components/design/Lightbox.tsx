@@ -104,19 +104,23 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="relative aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-xl bg-white shadow-playful"
+            className="relative flex max-h-[85vh] max-w-3xl items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {photo.src ? (
+              // Real width/height (not fill+object-cover) so the full photo
+              // always shows uncropped, whatever its aspect ratio — "auto"
+              // sizing lets the browser use the image's real proportions.
               <Image
                 src={photo.src}
                 alt={photo.alt}
-                fill
-                sizes="(min-width: 768px) 640px, 90vw"
-                className="object-cover"
+                width={1200}
+                height={1600}
+                sizes="(min-width: 768px) 768px, 90vw"
+                className="h-auto max-h-[85vh] w-auto max-w-full rounded-xl object-contain shadow-playful"
               />
             ) : (
-              <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-sky-light via-cream-soft to-sun-light text-ink-soft">
+              <div className="flex aspect-[4/3] w-full max-w-2xl items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-sky-light via-cream-soft to-sun-light text-ink-soft">
                 <ImageIcon className="h-10 w-10 opacity-60" aria-hidden="true" />
                 <span className="text-sm font-medium opacity-70">Photo coming soon</span>
               </div>

@@ -3,10 +3,19 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Lightbox, type LightboxPhoto } from "./Lightbox";
+import { Lightbox } from "./Lightbox";
+
+export interface StripPhoto {
+  src: string;
+  alt: string;
+  /** Real pixel dimensions, so each photo's box matches its own aspect
+   * ratio (fixed row height, width derived) instead of being cropped. */
+  width: number;
+  height: number;
+}
 
 interface PhotoStripProps {
-  photos: LightboxPhoto[];
+  photos: StripPhoto[];
 }
 
 /**
@@ -49,25 +58,24 @@ export function PhotoStrip({ photos }: PhotoStripProps) {
 
       <div
         ref={scrollerRef}
-        className="mt-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mt-4 flex snap-x snap-mandatory items-center gap-5 overflow-x-auto px-4 pb-4 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {photos.map((photo, i) => (
           <button
-            key={photo.src ?? i}
+            key={photo.src}
             type="button"
             onClick={() => setLightboxIndex(i)}
             aria-label={`View photo enlarged: ${photo.alt}`}
-            className="relative aspect-[4/3] w-64 shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-3xl shadow-soft sm:w-72"
+            className="relative h-64 shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-3xl shadow-soft sm:h-72"
+            style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
           >
-            {photo.src && (
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(min-width: 640px) 288px, 256px"
-                className="object-cover"
-              />
-            )}
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(min-width: 640px) 320px, 240px"
+              className="object-cover"
+            />
           </button>
         ))}
       </div>
